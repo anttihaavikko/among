@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{7710642A-EA8E-CF59-1013-4F3404297C29}|">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Among" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="PostProcessing" expanded="True">
+                <Node name="Editor" expanded="True">
+                  <Node name="PropertyDrawers" expanded="True">
+                    <Node name="MinDrawer.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5f072178-25b0-42fa-904e-c86f2a191126" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
