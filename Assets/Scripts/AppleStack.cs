@@ -46,4 +46,9 @@ public class AppleStack : MonoBehaviour
     {
         apples[index].gameObject.SetActive(false);
     }
+
+    public ColorObject TopApple()
+    {
+        return apples[count - 1];
+    }
 }

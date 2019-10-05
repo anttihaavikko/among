@@ -11,6 +11,9 @@ public class Eater : MonoBehaviour
     public AppleStack stack;
     public PlatformerController pc;
     public Animator anim;
+    public Face face;
+
+    private ColorObject stackTop;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,10 @@ public class Eater : MonoBehaviour
 
     void Colorize(int color)
     {
+        pc.groundLayer = Manager.Instance.masks[color];
+        pc.canJumpLayers = Manager.Instance.masks[color];
+
+        gameObject.layer = 13 + color;
         var c = Manager.Instance.colors[color];
         var sc = Manager.Instance.shineColors[color];
         colorSprites.ToList().ForEach(sprite => sprite.color = c);
@@ -47,19 +54,30 @@ public class Eater : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Apple")
+        if(collision.gameObject.tag == "Apple" && collision.gameObject.activeSelf)
         {
             var a = collision.gameObject.GetComponent<ColorObject>();
             if(a)
             {
                 stack.AddApple(a.colorIndex);
             }
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
+    }
+
+    void Munch()
+    {
+        face.Emote(Face.Emotion.Shocked, Face.Emotion.Default, 0.15f);
+    }
+
+    void ChangeColor()
+    {
+        Colorize(stackTop.colorIndex);
     }
 
     void ThrowApple()
     {
+        stackTop = stack.TopApple();
         anim.SetTrigger("eat");
     }
 

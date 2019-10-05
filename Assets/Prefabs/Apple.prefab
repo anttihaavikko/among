@@ -399,6 +399,7 @@ MonoBehaviour:
   colorIndex: 1
   sprite: {fileID: 5924189897241387308}
   shineSprite: {fileID: 5924189896790125732}
+  changesLayer: 0
 --- !u!212 &5924189897241387308
 SpriteRenderer:
   m_ObjectHideFlags: 0
