@@ -5,14 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
-	private static Manager instance = null;
+
+    public Vector3 lightPosition;
+    public Color[] colors;
+    public Color[] shineColors;
+
+    private static Manager instance = null;
 	public static Manager Instance {
 		get { return instance; }
 	}
 
-    public Vector3 lightPosition;
-
-	void Awake() {
+    void Awake() {
 		if (instance != null && instance != this) {
 			Destroy (this.gameObject);
 			return;

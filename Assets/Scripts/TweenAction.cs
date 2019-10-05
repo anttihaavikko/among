@@ -93,7 +93,7 @@ public class TweenAction {
 
     public bool Process() {
 
-		if (!theObject) {
+        if (!theObject) {
 			return true;
 		}
 
@@ -108,7 +108,7 @@ public class TweenAction {
 			tweenPos += Time.deltaTime / tweenDuration;
 
 			if (type == Type.Position) {
-				theObject.position = Lerp (startPos, targetPos, DoEase ());
+                theObject.position = Lerp (startPos, targetPos, DoEase ());
 			}
 
 			if (type == Type.LocalPosition) {

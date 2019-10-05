@@ -29,7 +29,7 @@ public class PlatformerController : MonoBehaviour {
     private int allowedJumpFrames = 5;
 
 	// flags
-	private bool canControl = true;
+	public bool canControl = true;
 	private bool running = false;
 	private bool grounded = false;
 	private bool doubleJumped = false;
