@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour {
     public Vector3 lightPosition;
     public Color[] colors;
     public Color[] shineColors;
+    public Color[] messageColors;
     public LayerMask[] masks;
 
     private static Manager instance = null;

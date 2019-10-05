@@ -36,12 +36,10 @@ public class SpeechBubble : MonoBehaviour {
 
 
     // Use this for initialization
-    void Awake () {
+    void Start () {
 		audioSource = GetComponent<AudioSource> ();
 
 		messageQue = new List<string> ();
-
-        SetColor(hiliteColor);
 
         Invoke("EnableSkip", 0.25f);
     }
@@ -105,21 +103,6 @@ public class SpeechBubble : MonoBehaviour {
 
         //AudioManager.Instance.PlayEffectAt(9, transform.position, 1f);
         //AudioManager.Instance.PlayEffectAt(27, transform.position, 0.7f);
-
-        if (str.Contains("[IMAGE"))
-        {
-            var idx = int.Parse(str.Substring(6, 1)) - 1;
-            if(str.Contains("[IMAGE1]")) {
-                hidesWithAny = true;
-            }
-            str = " ";
-            if(helpImage) helpImage.sprite = helpSprites[idx];
-            Tweener.Instance.ScaleTo(helpImage.transform, Vector3.one, 0.3f, 0f, TweenEasings.BounceEaseOut);
-        }
-        else
-        {
-            Invoke("ShowHelp", 2f);
-        }
 
         useColors = colors;
 

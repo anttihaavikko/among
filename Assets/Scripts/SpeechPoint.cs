@@ -8,6 +8,7 @@ public class SpeechPoint : MonoBehaviour
     public bool oneTime = false;
     public float delay = 0f;
     public SpeechBubble bubbleText;
+    public int colorIndex;
 
     private Vector3 fullSize;
     private bool shown = false;
@@ -21,6 +22,12 @@ public class SpeechPoint : MonoBehaviour
         bubble.localScale = Vector3.zero;
         message = bubbleText.textArea.text;
         bubbleText.textArea.text = "";
+        Debug.Log(colorIndex);
+    }
+
+    private void Start()
+    {
+        bubbleText.SetColor(Manager.Instance.messageColors[colorIndex]);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
