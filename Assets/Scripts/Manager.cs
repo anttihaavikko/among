@@ -10,6 +10,8 @@ public class Manager : MonoBehaviour {
 		get { return instance; }
 	}
 
+    public Vector3 lightPosition;
+
 	void Awake() {
 		if (instance != null && instance != this) {
 			Destroy (this.gameObject);

@@ -8,7 +8,6 @@ public class Shine : MonoBehaviour {
 	public float distance = 0.1f;
 	public Transform mirrorParent;
 	public bool checkRotation = false;
-	public Vector3 focus = Vector3.up * 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +16,7 @@ public class Shine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = (focus - transform.position).normalized;
+		Vector3 direction = (Manager.Instance.lightPosition - transform.position).normalized;
 		direction.z = originalPos.z;
 		direction.x = mirrorParent ? mirrorParent.localScale.x * direction.x : direction.x;
 

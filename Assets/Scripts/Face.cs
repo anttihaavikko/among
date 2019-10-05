@@ -159,10 +159,14 @@ public class Face : MonoBehaviour {
 	}
 
 	void MoveFace() {
+
+        if (!lookTarget)
+            return;
+
         Vector3 mp = Input.mousePosition;
         mp.z = 10f;
         Vector3 mouseInWorld = cam.ScreenToWorldPoint(mp);
-        Vector2 lookPos = mouseInWorld - transform.parent.position;
+        Vector2 lookPos = lookTarget.position;
 
 		lookPos = Quaternion.Euler(new Vector3(0, 0, -transform.parent.rotation.eulerAngles.z)) * lookPos;
 
