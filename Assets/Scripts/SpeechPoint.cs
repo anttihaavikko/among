@@ -22,7 +22,6 @@ public class SpeechPoint : MonoBehaviour
         bubble.localScale = Vector3.zero;
         message = bubbleText.textArea.text;
         bubbleText.textArea.text = "";
-        Debug.Log(colorIndex);
     }
 
     private void Start()

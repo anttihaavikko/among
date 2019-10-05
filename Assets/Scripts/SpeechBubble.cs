@@ -8,7 +8,7 @@ public class SpeechBubble : MonoBehaviour {
 
 	public TextMeshPro textArea;
     public SpriteRenderer helpImage;
-    public Sprite[] helpSprites;
+    public Sprite helpSprite;
 
 	private bool shown;
 	private string message = "";
@@ -18,9 +18,6 @@ public class SpeechBubble : MonoBehaviour {
     public bool done = false;
 
 	private AudioSource audioSource;
-	public AudioClip closeClip;
-
-	public GameObject clickHelp;
 
 	private List<string> messageQue;
 
@@ -34,6 +31,8 @@ public class SpeechBubble : MonoBehaviour {
     private string[] optionActions;
     private int optionSelection;
 
+    private Vector3 helpImageSize;
+
 
     // Use this for initialization
     void Start () {
@@ -42,6 +41,12 @@ public class SpeechBubble : MonoBehaviour {
 		messageQue = new List<string> ();
 
         Invoke("EnableSkip", 0.25f);
+
+        if (helpSprite)
+            helpImage.sprite = helpSprite;
+
+        helpImageSize = helpImage.transform.localScale;
+        helpImage.transform.localScale = Vector3.zero;
     }
 
     void EnableSkip()
@@ -59,6 +64,8 @@ public class SpeechBubble : MonoBehaviour {
 		if (messagePos >= 0 && !done) {
 			messagePos++;
 
+            if (messagePos > message.Length) return;
+
 			string msg = message.Substring (0, messagePos);
 
 			int openCount = msg.Split('(').Length - 1;
@@ -68,11 +75,19 @@ public class SpeechBubble : MonoBehaviour {
 				msg += ")";
 			}
 
-            textArea.text = useColors ? msg.Replace("(", "<color=" + hiliteColorHex + ">").Replace(")", "</color>") : msg;
-
 			string letter = message.Substring (messagePos - 1, 1);
 
-			if (messagePos == 1 || letter == " ") {
+            if(letter == "#")
+            {
+                done = true;
+                textArea.text += " ";
+                Tweener.Instance.ScaleTo(helpImage.transform, helpImageSize, 0.3f, 0f, TweenEasings.BounceEaseOut);
+                return;
+            }
+
+            textArea.text = useColors ? msg.Replace("(", "<color=" + hiliteColorHex + ">").Replace(")", "</color>") : msg;
+
+            if (messagePos == 1 || letter == " ") {
                 //AudioManager.Instance.PlayEffectAt(25, transform.position, 0.5f);
                 //AudioManager.Instance.PlayEffectAt(1, transform.position, 0.75f);
             }
@@ -107,10 +122,6 @@ public class SpeechBubble : MonoBehaviour {
         useColors = colors;
 
         //AudioManager.Instance.Highpass ();
-
-		if (closeClip) {
-			audioSource.PlayOneShot (closeClip, 1f);
-		}
 
 		done = false;
 		shown = true;
@@ -151,10 +162,6 @@ public class SpeechBubble : MonoBehaviour {
 
         //AudioManager.Instance.PlayEffectAt (9, transform.position, 1f);
         //AudioManager.Instance.PlayEffectAt(27, transform.position, 0.7f);
-
-        if (closeClip) {
-			audioSource.PlayOneShot (closeClip, 1f);
-		}
 
 		shown = false;
 		textArea.text = "";
