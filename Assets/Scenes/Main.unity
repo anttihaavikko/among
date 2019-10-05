@@ -1406,6 +1406,7 @@ Transform:
   m_Children:
   - {fileID: 273803255}
   - {fileID: 1232306866}
+  - {fileID: 1522316731}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7352,7 +7353,6 @@ Transform:
   - {fileID: 1030336219}
   - {fileID: 389797317}
   - {fileID: 2069398534}
-  - {fileID: 1522316731}
   - {fileID: 1914951945}
   m_Father: {fileID: 245917551}
   m_RootOrder: 1
@@ -8910,10 +8910,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1522316731}
   - component: {fileID: 1522316730}
+  - component: {fileID: 1522316732}
   m_Layer: 0
   m_Name: Look Target
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8973,12 +8974,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522316729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.069, y: -0.388, z: 0}
+  m_LocalPosition: {x: 0.03, y: 3.468, z: 0}
   m_LocalScale: {x: 0.25522, y: 0.25522, z: 0.25522}
   m_Children: []
-  m_Father: {fileID: 1232306866}
-  m_RootOrder: 11
+  m_Father: {fileID: 245917551}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522316732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522316729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584c6a65956c0479a8f936959f5689ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: {fileID: 93849204}
 --- !u!4 &1529685939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4843003834363167792, guid: 07276aa2f9707489baa710c8674fd1e2,
@@ -11143,7 +11157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1232306866}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1914951946
 CircleCollider2D:

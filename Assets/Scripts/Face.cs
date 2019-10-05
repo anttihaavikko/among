@@ -170,7 +170,9 @@ public class Face : MonoBehaviour {
 
 		lookPos = Quaternion.Euler(new Vector3(0, 0, -transform.parent.rotation.eulerAngles.z)) * lookPos;
 
-		transform.localPosition = Vector2.MoveTowards(transform.localPosition, Vector2.Scale(lookPos.normalized, faceRange), Time.deltaTime * lookSpeed);
+        lookPos = transform.InverseTransformPoint(lookPos);
+
+        transform.localPosition = Vector2.MoveTowards(transform.localPosition, Vector2.Scale(lookPos.normalized, faceRange), Time.deltaTime * lookSpeed);
 
 		if (pupils.Length > 0) {
 			for (int i = 0; i < pupils.Length; i++) {

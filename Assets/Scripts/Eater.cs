@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Eater : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class Eater : MonoBehaviour
         {
             ThrowApple();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadSceneAsync("Main");
     }
 
     void Colorize(int color)
