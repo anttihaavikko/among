@@ -5,8 +5,6 @@ using UnityEngine.PostProcessing;
 
 public class EffectCamera : MonoBehaviour {
 
-	public Material transitionMaterial;
-
 	private float cutoff = 1f, targetCutoff = 1f;
 	private float prevCutoff = 1f;
 	private float cutoffPos = 0f;
@@ -20,18 +18,14 @@ public class EffectCamera : MonoBehaviour {
 
 	private Vector3 originalPos;
 
+    public Cinemachine.CinemachineBrain brain;
+
 	void Start() {
 		filters = GetComponent<PostProcessingBehaviour>();
 		originalPos = transform.position;
-		Invoke ("StartFade", 0.5f);
 	}
 
 	void Update() {
-		cutoffPos += Time.fixedDeltaTime / transitionTime;
-		cutoffPos = (cutoffPos > 1f) ? 1f : cutoffPos;
-		cutoff = Mathf.Lerp (prevCutoff, targetCutoff, cutoffPos);
-		transitionMaterial.SetFloat ("_Cutoff", cutoff);
-
 		// chromatic aberration update
 		if (filters) {
 			chromaAmount = Mathf.MoveTowards (chromaAmount, 0, Time.deltaTime * chromaSpeed);
@@ -42,29 +36,12 @@ public class EffectCamera : MonoBehaviour {
 
 		if (shakeTime > 0f) {
 			shakeTime -= Time.deltaTime;
-			transform.position = originalPos + new Vector3 (Random.Range (-shakeAmount, shakeAmount), Random.Range (-shakeAmount, shakeAmount), 0);
-		} else {
+			transform.position = transform.position + new Vector3 (Random.Range (-shakeAmount, shakeAmount), Random.Range (-shakeAmount, shakeAmount), 0);
+            brain.enabled = false;
+        } else {
 			transform.position = originalPos;
+            brain.enabled = true;
 		}
-	}
-
-	void StartFade() {
-		Fade (false, 0.5f);
-	}
-
-	void OnRenderImage(RenderTexture src, RenderTexture dst) {
-		if (transitionMaterial) {
-			Graphics.Blit (src, dst, transitionMaterial);
-		}
-	}
-
-	public void Fade(bool show, float delay) {
-		targetCutoff = show ? 1.1f : -0.1f;
-		prevCutoff = show ? -0.1f : 1.1f;
-		cutoffPos = 0f;
-		transitionTime = delay;
-
-		// AudioManager.Instance.PlayEffectAt (12, Vector3.zero, 0.2f);
 	}
 
 	public void Chromate(float amount, float speed) {
@@ -73,12 +50,13 @@ public class EffectCamera : MonoBehaviour {
 	}
 
 	public void Shake(float amount, float time) {
-		shakeAmount = amount;
+        shakeAmount = amount;
 		shakeTime = time;
 	}
 
 	public void BaseEffect(float mod = 1f) {
-		Shake (0.04f * mod, 0.075f * mod);
+		//Shake (0.04f * mod, 0.075f * mod);
 		Chromate (0.25f * mod, 0.1f * mod);
+
 	}
 }

@@ -24,7 +24,7 @@ TagManager:
   - Char2
   - Char3
   - Triggerer
-  - 
+  - Gore
   - 
   - 
   - 
@@ -45,6 +45,18 @@ TagManager:
     locked: 0
   - name: BG1
     uniqueID: 2109191643
+    locked: 0
+  - name: Gore1
+    uniqueID: 3392394295
+    locked: 0
+  - name: Gore2
+    uniqueID: 3098825163
+    locked: 0
+  - name: Gore3
+    uniqueID: 2746769235
+    locked: 0
+  - name: Gore4
+    uniqueID: 50190447
     locked: 0
   - name: Default
     uniqueID: 0

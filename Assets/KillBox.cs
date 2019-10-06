@@ -9,7 +9,7 @@ public class KillBox : MonoBehaviour
     {
         if(collision.gameObject.tag == "Soul")
         {
-            SceneManager.LoadSceneAsync("Main");
+            collision.gameObject.GetComponentInParent<Eater>().Die();
         }
     }
 }

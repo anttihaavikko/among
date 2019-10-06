@@ -14,8 +14,14 @@ public class Eater : MonoBehaviour
     public Animator anim;
     public Face face;
     public GameObject tail;
+    public Cinemachine.CinemachineImpulseSource impulseSource;
+    public EffectCamera cam;
+    public Dimmer dimmer;
 
     private ColorObject stackTop;
+
+    public GameObject root;
+    private int currentColor = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +46,13 @@ public class Eater : MonoBehaviour
             ThrowApple();
 
         if (InputMagic.Instance.GetButtonDown(InputMagic.B))
-            SceneManager.LoadSceneAsync("Main");
+            Die();
     }
 
     void Colorize(int color)
     {
+        currentColor = color;
+
         pc.groundLayer = Manager.Instance.masks[color];
         pc.canJumpLayers = Manager.Instance.masks[color];
 
@@ -119,5 +127,43 @@ public class Eater : MonoBehaviour
     {
         AudioManager.Instance.PlayEffectAt(12, transform.position, 0.186f);
         AudioManager.Instance.PlayEffectAt(13, transform.position, 0.137f);
+    }
+
+    public void Die()
+    {
+        impulseSource.GenerateImpulseAt(transform.position, Vector3.one * 2f);
+        cam.BaseEffect(4);
+        root.SetActive(false);
+        var gore = EffectManager.Instance.AddEffect(7, transform.position);
+        EffectManager.Instance.AddEffect(8, transform.position + Vector3.up * 0.5f);
+        EffectManager.Instance.AddEffect(8, transform.position + Vector3.down);
+        EffectManager.Instance.AddEffect(9, transform.position + Vector3.up * 0.5f);
+        EffectManager.Instance.AddEffect(9, transform.position + Vector3.down);
+
+        if(currentColor > -1)
+        {
+            var g = gore.GetComponent<Gore>();
+            g.ColorizeSprites(currentColor);
+        }
+
+        AudioManager.Instance.PlayEffectAt(0, transform.position, 1.263f);
+        AudioManager.Instance.PlayEffectAt(1, transform.position, 0.802f);
+        AudioManager.Instance.PlayEffectAt(2, transform.position, 0.534f);
+        AudioManager.Instance.PlayEffectAt(4, transform.position, 0.575f);
+        AudioManager.Instance.PlayEffectAt(9, transform.position, 0.462f);
+
+        Invoke("DoFade", 1.5f);
+
+        Invoke("Respawn", 3f);
+    }
+
+    void DoFade()
+    {
+        dimmer.FadeIn(1.5f);
+    }
+
+    void Respawn()
+    {
+        SceneManager.LoadSceneAsync("Main");
     }
 }
