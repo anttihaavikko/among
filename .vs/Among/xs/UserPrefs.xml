@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{7710642A-EA8E-CF59-1013-4F3404297C29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AudioManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/AudioManager.cs" Line="49" Column="3" />
+      <File FileName="Assets/Scripts/AudioManager.cs" Line="100" Column="72" />
       <File FileName="Assets/Scripts/Manager.cs" Line="42" Column="28" />
-      <File FileName="Assets/Scripts/Eater.cs" Line="48" Column="9" />
+      <File FileName="Assets/Scripts/Eater.cs" Line="30" Column="47" />
       <File FileName="Assets/Scripts/InputMagic.cs" Line="529" Column="39" />
       <File FileName="Assets/Scripts/ColorObject.cs" />
       <File FileName="Assets/Scripts/PlatformerController.cs" Line="76" Column="67" />
       <File FileName="Assets/Editor/SoundDesigner.cs" Line="18" Column="6" />
       <File FileName="Assets/Scripts/AppleStack.cs" />
-      <File FileName="Assets/Scripts/SpeechBubble.cs" />
-      <File FileName="Assets/Scripts/SpeechPoint.cs" Line="77" Column="31" />
+      <File FileName="Assets/Scripts/SpeechBubble.cs" Line="60" Column="25" />
+      <File FileName="Assets/Scripts/SpeechPoint.cs" Line="78" Column="70" />
       <File FileName="Assets/Checkpoint.cs" Line="21" Column="45" />
       <File FileName="Assets/Scripts/TogglerTrigger.cs" Line="17" Column="40" />
       <File FileName="Assets/KillBox.cs" Line="12" Column="54" />
@@ -18,8 +18,8 @@
       <File FileName="Assets/Scripts/Gore.cs" Line="28" Column="68" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="58" Column="39" />
       <File FileName="Assets/Scripts/Dimmer.cs" Line="22" Column="28" />
-      <File FileName="Assets/Scripts/Emoter.cs" Line="21" Column="44" />
-      <File FileName="Assets/Scripts/StartView.cs" Line="31" Column="13" />
+      <File FileName="Assets/Scripts/Emoter.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/StartView.cs" Line="35" Column="70" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -33,7 +33,7 @@
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="StartView.cs" selected="True" />
+                <Node name="AudioManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
