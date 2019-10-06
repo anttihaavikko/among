@@ -22,10 +22,14 @@ public class ColorObject : MonoBehaviour
             gameObject.layer = 10 + c;
 
         colorIndex = c;
-        if (sprite)
-            sprite.color = Manager.Instance.colors[colorIndex];
 
-        if (shineSprite)
-            shineSprite.color = Manager.Instance.shineColors[colorIndex];
+        if(Manager.Instance)
+		{
+			if (sprite)
+				sprite.color = Manager.Instance.colors[colorIndex];
+
+			if (shineSprite)
+				shineSprite.color = Manager.Instance.shineColors[colorIndex];
+		}
     }
 }

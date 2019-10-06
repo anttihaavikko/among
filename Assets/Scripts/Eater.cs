@@ -46,6 +46,8 @@ public class Eater : MonoBehaviour
         pc.groundLayer = Manager.Instance.masks[color];
         pc.canJumpLayers = Manager.Instance.masks[color];
 
+        EffectManager.Instance.AddEffectToParent(0, transform.position - Vector3.up * 0.75f, transform);
+
         gameObject.layer = 13 + color;
         var c = Manager.Instance.colors[color];
         var sc = Manager.Instance.shineColors[color];
@@ -70,6 +72,7 @@ public class Eater : MonoBehaviour
     void Munch()
     {
         face.Emote(Face.Emotion.Shocked, Face.Emotion.Default, 0.15f);
+        EffectManager.Instance.AddEffect(2 + stackTop.colorIndex, face.transform.position);
     }
 
     void ChangeColor()
@@ -80,7 +83,8 @@ public class Eater : MonoBehaviour
     void ThrowApple()
     {
         stackTop = stack.TopApple();
-        anim.SetTrigger("eat");
+        if(stackTop)
+            anim.SetTrigger("eat");
     }
 
     void MoveApple()

@@ -27,6 +27,7 @@ public class PlatformerController : MonoBehaviour {
 	private float walljumpDir = 0f;
     private int jumpFrames = 0;
     private int allowedJumpFrames = 5;
+	public Transform feetPoint;
 
 	// flags
 	public bool canControl = true;
@@ -286,13 +287,12 @@ public class PlatformerController : MonoBehaviour {
 
         jumpBufferedFor = 0;
 
-        //AudioManager.Instance.PlayEffectAt (0, transform.position, 0.5f);
+		//AudioManager.Instance.PlayEffectAt (0, transform.position, 0.5f);
 
-        //EffectManager.Instance.AddEffect(5, transform.position + Vector3.down * 0.5f);
-        //EffectManager.Instance.AddEffect(6, transform.position + Vector3.down * 0.5f);
+		EffectManager.Instance.AddEffect(5, feetPoint.position + Vector3.up * 1f);
 
-        // animation
-        if (anim)
+		// animation
+		if (anim)
         {
             anim.speed = 1f;
             anim.SetTrigger("jump");
@@ -328,11 +328,10 @@ public class PlatformerController : MonoBehaviour {
 
 		//AudioManager.Instance.PlayEffectAt (1, transform.position, 0.5f);
 
-        //EffectManager.Instance.AddEffect(5, transform.position + Vector3.down * 0.5f);
-        //EffectManager.Instance.AddEffect(6, transform.position + Vector3.down * 0.5f);
+		EffectManager.Instance.AddEffect(1, feetPoint.position);
 
-        //AudioManager.Instance.PlayEffectAt(26, transform.position, 0.3f);
-        //AudioManager.Instance.PlayEffectAt(35, transform.position, 0.5f);
+		//AudioManager.Instance.PlayEffectAt(26, transform.position, 0.3f);
+		//AudioManager.Instance.PlayEffectAt(35, transform.position, 0.5f);
 
 		// animation
 		if (anim) {

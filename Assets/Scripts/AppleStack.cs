@@ -49,6 +49,6 @@ public class AppleStack : MonoBehaviour
 
     public ColorObject TopApple()
     {
-        return apples[count - 1];
+        return count > 0 ? apples[count - 1] : null;
     }
 }
