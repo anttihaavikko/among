@@ -27,7 +27,9 @@ public class Eater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Manager.Instance.checkPoint != Vector3.zero)
+        AudioManager.Instance.targetPitch = 1f;
+
+        if (Manager.Instance.checkPoint != Vector3.zero)
             transform.parent.position = Manager.Instance.checkPoint;
     }
 
@@ -143,6 +145,8 @@ public class Eater : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.targetPitch = 0.8f;
+
         impulseSource.GenerateImpulseAt(transform.position, Vector3.one * 2f);
         cam.BaseEffect(4);
         root.SetActive(false);
