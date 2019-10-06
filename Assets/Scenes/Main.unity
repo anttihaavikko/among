@@ -7419,6 +7419,7 @@ MonoBehaviour:
   jumpClip: {fileID: 0}
   landClip: {fileID: 0}
   anim: {fileID: 1232306871}
+  eater: {fileID: 1232306872}
 --- !u!1001 &247943177
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -53,6 +53,8 @@ public class PlatformerController : MonoBehaviour {
 	// animations
 	public Animator anim;
 
+    public Eater eater;
+
 	// ###############################################################
 
 	// Use this for initialization
@@ -71,7 +73,17 @@ public class PlatformerController : MonoBehaviour {
         bool leftInAir = false;
         bool rightInAir = false;
 
-		if (!checkForEdges) {
+        Vector3 pos = body.transform.position + Vector3.down * 0.75f;
+        var somethingAt = Physics2D.OverlapCircle(pos, 0.5f, canJumpLayers);
+        if(somethingAt)
+            Debug.Log(somethingAt.name);
+
+        if(somethingAt)
+        {
+            eater.Die();
+        }
+
+        if (!checkForEdges) {
 
 			grounded = false;
 
@@ -90,7 +102,7 @@ public class PlatformerController : MonoBehaviour {
 
 				// draw debug lines
 				Color debugLineColor = grounded ? Color.green : Color.red;
-				Debug.DrawLine (body.transform.position, groundCheck.position, debugLineColor, 0.2f);
+				Debug.DrawLine (pos, groundCheck.position, debugLineColor, 0.2f);
 				Debug.DrawLine (groundCheck.position + Vector3.left * groundCheckRadius, groundCheck.position + Vector3.right * groundCheckRadius, debugLineColor, 0.2f);
 			}
 

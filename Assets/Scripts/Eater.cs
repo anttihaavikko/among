@@ -51,6 +51,9 @@ public class Eater : MonoBehaviour
 
     void Colorize(int color)
     {
+        impulseSource.GenerateImpulseAt(transform.position, Vector3.one * 0.5f);
+        cam.BaseEffect(2);
+
         currentColor = color;
 
         pc.groundLayer = Manager.Instance.masks[color];
@@ -80,6 +83,9 @@ public class Eater : MonoBehaviour
         {
             if (stack.IsFull()) return;
 
+            impulseSource.GenerateImpulseAt(transform.position, Vector3.one * 0.25f);
+            cam.BaseEffect(1f);
+
             var a = collision.gameObject.GetComponent<ColorObject>();
             if(a)
             {
@@ -92,7 +98,10 @@ public class Eater : MonoBehaviour
     void Munch()
     {
         face.Emote(Face.Emotion.Shocked, Face.Emotion.Default, 0.15f);
-        EffectManager.Instance.AddEffect(2 + stackTop.colorIndex, face.transform.position);
+
+        if(stackTop)
+            EffectManager.Instance.AddEffect(2 + stackTop.colorIndex, face.transform.position);
+
         AudioManager.Instance.PlayEffectAt(Random.Range(25, 31), face.transform.position, 7f);
     }
 
@@ -165,5 +174,14 @@ public class Eater : MonoBehaviour
     void Respawn()
     {
         SceneManager.LoadSceneAsync("Main");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.relativeVelocity.magnitude > 5f)
+        {
+            impulseSource.GenerateImpulseAt(transform.position, Vector3.one * collision.relativeVelocity.magnitude * 0.025f);
+            cam.BaseEffect(1f * collision.relativeVelocity.magnitude * 0.025f);
+        }
     }
 }
