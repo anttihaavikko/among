@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour {
     public Color[] shineColors;
     public Color[] messageColors;
     public LayerMask[] masks;
+    public Vector3 checkPoint = Vector3.zero;
 
     private static Manager instance = null;
 	public static Manager Instance {
@@ -24,5 +25,7 @@ public class Manager : MonoBehaviour {
 		} else {
 			instance = this;
 		}
-	}
+
+        DontDestroyOnLoad(instance.gameObject);
+    }
 }

@@ -1,26 +1,32 @@
 ﻿<Properties StartupConfiguration="{7710642A-EA8E-CF59-1013-4F3404297C29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlatformerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TogglerTrigger.cs">
     <Files>
-      <File FileName="Assets/Scripts/AudioManager.cs" Line="75" Column="15" />
-      <File FileName="Assets/Scripts/Manager.cs" Line="11" Column="32" />
-      <File FileName="Assets/Scripts/Eater.cs" Line="75" Column="41" />
-      <File FileName="Assets/Scripts/InputMagic.cs" Line="543" Column="36" />
-      <File FileName="Assets/Scripts/ColorObject.cs" Line="32" Column="66" />
-      <File FileName="Assets/Scripts/AppleStack.cs" Line="51" Column="6" />
-      <File FileName="Assets/Scripts/PlatformerController.cs" Line="292" Column="65" />
+      <File FileName="Assets/Scripts/AudioManager.cs" Line="49" Column="3" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="29" Column="48" />
+      <File FileName="Assets/Scripts/Eater.cs" Line="24" Column="29" />
+      <File FileName="Assets/Scripts/InputMagic.cs" />
+      <File FileName="Assets/Scripts/ColorObject.cs" />
+      <File FileName="Assets/Scripts/PlatformerController.cs" />
+      <File FileName="Assets/Editor/SoundDesigner.cs" />
+      <File FileName="Assets/Scripts/AppleStack.cs" />
+      <File FileName="Assets/Scripts/SpeechBubble.cs" />
+      <File FileName="Assets/Scripts/SpeechPoint.cs" Line="77" Column="31" />
+      <File FileName="Assets/Checkpoint.cs" Line="21" Column="45" />
+      <File FileName="Assets/Scripts/TogglerTrigger.cs" Line="17" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Among" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Editor" expanded="True" />
               <Node name="PostProcessing" expanded="True">
                 <Node name="Editor" expanded="True">
                   <Node name="PropertyDrawers" expanded="True" />
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="PlatformerController.cs" selected="True" />
+                <Node name="TogglerTrigger.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -30,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5f072178-25b0-42fa-904e-c86f2a191126" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b41cbdfb-5a47-4fba-9f3b-7a2169688aee" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -359,6 +359,34 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-2647983529311579031
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: tiptoe
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: grounded
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 5849834328082331788}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.16247314
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-1785697950946721009
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -401,10 +429,10 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7795776471573239819}
-    m_Position: {x: 560, y: -50, z: 0}
+    m_Position: {x: 480, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5849834328082331788}
-    m_Position: {x: 590, y: 40, z: 0}
+    m_Position: {x: 560, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1559806898369402870}
     m_Position: {x: 70, y: 320, z: 0}
@@ -430,11 +458,13 @@ AnimatorStateMachine:
   m_AnyStateTransitions:
   - {fileID: -3152858462275830983}
   - {fileID: 4399368335646949519}
+  - {fileID: 4391942065477018207}
+  - {fileID: -2647983529311579031}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 210, y: -80, z: 0}
+  m_AnyStatePosition: {x: 100, y: -50, z: 0}
+  m_EntryPosition: {x: 150, y: -120, z: 0}
   m_ExitPosition: {x: 890, y: 50, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7544842577825493119}
@@ -618,6 +648,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: land2
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: tiptoeing
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -830,6 +866,34 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &4391942065477018207
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: tiptoe
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: grounded
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -7795776471573239819}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1624731
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &4399368335646949519
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

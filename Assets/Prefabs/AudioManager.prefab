@@ -51,7 +51,51 @@ MonoBehaviour:
   volume: 0.5
   effectPrefab: {fileID: 114852473009967456, guid: 3d15b96e9a8fd4b68902e126f7cce22b,
     type: 3}
-  effects: []
+  effects:
+  - {fileID: 8300000, guid: e8aa14bc35f354e07a9b8950e6ce907a, type: 3}
+  - {fileID: 8300000, guid: 89b984e2df4e941b4aaf38f96a614346, type: 3}
+  - {fileID: 8300000, guid: a93699e50462e432a974d23dd72415ce, type: 3}
+  - {fileID: 8300000, guid: 7f2a80cec62974a86919cabe232d9941, type: 3}
+  - {fileID: 8300000, guid: 454e1c6b9ff924850a6494ce011b73bc, type: 3}
+  - {fileID: 8300000, guid: 74c9f5f0f8d6149c489a8ba385008c47, type: 3}
+  - {fileID: 8300000, guid: ecb3acd76992a4978bddb5f59959a00b, type: 3}
+  - {fileID: 8300000, guid: 7227d8299bd85490ca7a324eaec1ef28, type: 3}
+  - {fileID: 8300000, guid: 2f89f1a03895b47fe9554f66995e38bc, type: 3}
+  - {fileID: 8300000, guid: 2468ff4b92e3544d0920eee770c214c7, type: 3}
+  - {fileID: 8300000, guid: b166c7713b2ec4ebeb6a49ab5c63d01e, type: 3}
+  - {fileID: 8300000, guid: 24f3b1e12a8134c6dbf66cabca45f634, type: 3}
+  - {fileID: 8300000, guid: 23c25137a1874457e9e9a9a132b7ece9, type: 3}
+  - {fileID: 8300000, guid: 5edd9a28f91de434285c3c223dd8f768, type: 3}
+  - {fileID: 8300000, guid: cd35e0ce217db4dc3a92e3d31333a9ab, type: 3}
+  - {fileID: 8300000, guid: ff5209db13d614ff18ee4745cb0ca653, type: 3}
+  - {fileID: 8300000, guid: 42c3fcf8c2e1e48db89ff6b537b89e9b, type: 3}
+  - {fileID: 8300000, guid: 4d4be7c635c914d9194bf0a95b52d9c3, type: 3}
+  - {fileID: 8300000, guid: 47dca6b1c303a4d9bafcbc6dc0165a8f, type: 3}
+  - {fileID: 8300000, guid: 4735bfba8062d4ddeb53cfb72fba3f86, type: 3}
+  - {fileID: 8300000, guid: 065e2a266f74b4d54bb470d6ef7f9e98, type: 3}
+  - {fileID: 8300000, guid: 10372b4f6133546268675405b757277b, type: 3}
+  - {fileID: 8300000, guid: 22f9e7fe5dd1345aabe541238a5f9ce4, type: 3}
+  - {fileID: 8300000, guid: c0f581f05304f45309789d373a9e9ce6, type: 3}
+  - {fileID: 8300000, guid: 58ef23d342d5d49749e52186da836c22, type: 3}
+  - {fileID: 8300000, guid: 4f68251d03450473f8a647630552c391, type: 3}
+  - {fileID: 8300000, guid: a766c6698faa048e7b79b8f1093b1e67, type: 3}
+  - {fileID: 8300000, guid: be7259cba9a174bc594ac981e1d11a64, type: 3}
+  - {fileID: 8300000, guid: 06e0c181e8abb4bb8bf0b314c2cf3840, type: 3}
+  - {fileID: 8300000, guid: b61ddea5379744b638fd9a452b517fe9, type: 3}
+  - {fileID: 8300000, guid: f8c950e24714e45fbb1814e5cb9537e3, type: 3}
+  - {fileID: 8300000, guid: 24c4c5c3c911049dca9d96cd2aed6dd2, type: 3}
+  - {fileID: 8300000, guid: 928640b1890534834a78fcbe5be77cd1, type: 3}
+  - {fileID: 8300000, guid: 85bfd2fa15be54c8a9a414b13d2b9881, type: 3}
+  - {fileID: 8300000, guid: a37f37555106245dbbe2479ff2dc0702, type: 3}
+  - {fileID: 8300000, guid: 2b9af386639834f409057b22c68229e8, type: 3}
+  - {fileID: 8300000, guid: f7a5e13d94d414047aba978ef0780e37, type: 3}
+  - {fileID: 8300000, guid: 0b12305663df74de9ada0228075529be, type: 3}
+  - {fileID: 8300000, guid: bdf00e09221a74f7b82b56d8f55dda01, type: 3}
+  - {fileID: 8300000, guid: 335beb6e46f37488db5858a6e4751837, type: 3}
+  - {fileID: 8300000, guid: 98008155a01a94c97934f48b89980c4d, type: 3}
+  - {fileID: 8300000, guid: f268bb6a6affe4444a6de2875e1b9f1d, type: 3}
+  - {fileID: 8300000, guid: b6b1f88388732457bbb600e9b2cd1255, type: 3}
+  - {fileID: 8300000, guid: 27d6088c2c3084aecbbd3def00514bc3, type: 3}
   lowpass: {fileID: 7724075917291034181}
   highpass: {fileID: 4256309444584372725}
 --- !u!82 &7724075917291034180
@@ -64,15 +108,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 27bbd5ca66e454915b53a1b8b6dedc1a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -159,13 +203,13 @@ AudioLowPassFilter:
   m_GameObject: {fileID: 7724075917291034179}
   m_Enabled: 1
   serializedVersion: 3
-  m_LowpassResonanceQ: 1
+  m_LowpassResonanceQ: 3
   lowpassLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.22727273
+      value: 0.9090496
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -183,5 +227,5 @@ AudioHighPassFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7724075917291034179}
   m_Enabled: 1
-  m_CutoffFrequency: 5000
-  m_HighpassResonanceQ: 1
+  m_CutoffFrequency: 10
+  m_HighpassResonanceQ: 3

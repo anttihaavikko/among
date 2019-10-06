@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SpeechPoint : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class SpeechPoint : MonoBehaviour
     private bool shown = false;
 
     private string message;
+
+	public bool isEnd = false;
+	public ColorObject[] endBlocks;
 
     // Start is called before the first frame update
     void Awake()
@@ -40,7 +44,8 @@ public class SpeechPoint : MonoBehaviour
         if (collision.gameObject.tag != "Soul") return;
         CancelInvoke("Show");
         Tweener.Instance.ScaleTo(bubble, Vector3.zero, 0.1f, 0f, TweenEasings.QuadraticEaseIn);
-    }
+		DoSound();
+	}
 
     void Show()
     {
@@ -48,7 +53,28 @@ public class SpeechPoint : MonoBehaviour
         {
             bubbleText.ShowMessage(message, true);
             Tweener.Instance.ScaleTo(bubble, fullSize, 0.2f, 0f, TweenEasings.QuadraticEaseOut);
+			DoSound();
             shown = true;
+
+            if(isEnd)
+			{
+				Invoke("DoEnd", 1.5f);
+			}
         }
     }
+
+    void DoSound()
+	{
+		AudioManager.Instance.PlayEffectAt(8, transform.position, 0.818f);
+		AudioManager.Instance.PlayEffectAt(11, transform.position, 0.445f);
+		AudioManager.Instance.PlayEffectAt(5, transform.position, 0.526f);
+	}
+
+    void DoEnd()
+	{
+        endBlocks.ToList().ForEach(eb =>
+        {
+            eb.UpdateColor(0);
+        });
+	}
 }

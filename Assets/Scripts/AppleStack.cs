@@ -21,9 +21,15 @@ public class AppleStack : MonoBehaviour
 
     public void AddApple(int color)
     {
-        apples[count].UpdateColor(color);
+		AudioManager.Instance.PlayEffectAt(3, transform.position, 0.769f);
+		AudioManager.Instance.PlayEffectAt(32, transform.position, 0.883f);
+		AudioManager.Instance.PlayEffectAt(0, transform.position, 0.83f);
+
+		apples[count].UpdateColor(color);
         apples[count].gameObject.SetActive(true);
         count++;
+
+        EffectManager.Instance.AddEffectToParent(6, TopApple().transform.position, TopApple().transform);
     }
 
     public void ThrowTop()
@@ -50,5 +56,10 @@ public class AppleStack : MonoBehaviour
     public ColorObject TopApple()
     {
         return count > 0 ? apples[count - 1] : null;
+    }
+
+    public bool IsFull()
+    {
+        return count == 5;
     }
 }

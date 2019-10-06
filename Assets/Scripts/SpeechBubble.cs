@@ -57,7 +57,7 @@ public class SpeechBubble : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-		if (Random.value < 0.1f) {
+		if (Random.value < 0.2f) {
 			return;
 		}
 
@@ -88,9 +88,10 @@ public class SpeechBubble : MonoBehaviour {
             textArea.text = useColors ? msg.Replace("(", "<color=" + hiliteColorHex + ">").Replace(")", "</color>") : msg;
 
             if (messagePos == 1 || letter == " ") {
-                //AudioManager.Instance.PlayEffectAt(25, transform.position, 0.5f);
-                //AudioManager.Instance.PlayEffectAt(1, transform.position, 0.75f);
-            }
+				//AudioManager.Instance.PlayEffectAt(25, transform.position, 0.5f);
+				//AudioManager.Instance.PlayEffectAt(1, transform.position, 0.75f);
+				AudioManager.Instance.PlayEffectAt(Random.Range(33, 43), transform.position, 7f);
+			}
 
 			if (messagePos >= message.Length) {
 				messagePos = -1;

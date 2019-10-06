@@ -66,7 +66,7 @@ public class PlatformerController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		bool wasGrounded = grounded;
         bool leftInAir = false;
         bool rightInAir = false;
@@ -104,10 +104,13 @@ public class PlatformerController : MonoBehaviour {
                 if (rightInAir)
                     anim.SetFloat("tiptoe", 1);
 
-                if(!leftInAir && !rightInAir)
+                if (!leftInAir && !rightInAir)
                     anim.SetFloat("tiptoe", 0);
             }
-		} else {
+
+            anim.SetBool("tiptoeing", (leftInAir || rightInAir) && grounded);
+
+        } else {
 			grounded = Physics2D.Raycast (transform.position, Vector2.down, 1f);
 
 			// draw debug lines
@@ -269,8 +272,12 @@ public class PlatformerController : MonoBehaviour {
     {
         body.velocity = new Vector2(body.velocity.x, 0); // reset vertical speed
 
-        //AudioManager.Instance.PlayEffectAt(22, transform.position, 1f);
-        //AudioManager.Instance.PlayEffectAt(23, transform.position, 0.5f);
+        AudioManager.Instance.PlayEffectAt(7, feetPoint.position, 1.2571f);
+        AudioManager.Instance.PlayEffectAt(6, feetPoint.position, 0.194f);
+        AudioManager.Instance.PlayEffectAt(5, feetPoint.position, 0.102f);
+        AudioManager.Instance.PlayEffectAt(10, feetPoint.position, 0.507f);
+        AudioManager.Instance.PlayEffectAt(Random.Range(18, 24), body.transform.position, 7f);
+
 
         jumped = true;
 
@@ -313,6 +320,11 @@ public class PlatformerController : MonoBehaviour {
     }
 
 	private void Land() {
+
+        AudioManager.Instance.PlayEffectAt(1, feetPoint.position, 0.543f);
+        AudioManager.Instance.PlayEffectAt(2, feetPoint.position, 0.121f);
+        AudioManager.Instance.PlayEffectAt(4, feetPoint.position, 0.437f);
+        AudioManager.Instance.PlayEffectAt(Random.Range(18, 24), body.transform.position, 7f);
 
         jumped = false;
 
