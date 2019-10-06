@@ -35,11 +35,9 @@ public class Eater : MonoBehaviour
         //    Colorize(2);
 
         if(InputMagic.Instance.GetButtonDown(InputMagic.X))
-        {
             ThrowApple();
-        }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (InputMagic.Instance.GetButtonDown(InputMagic.B))
             SceneManager.LoadSceneAsync("Main");
     }
 

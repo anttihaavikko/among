@@ -1,23 +1,10 @@
 ﻿<Properties StartupConfiguration="{7710642A-EA8E-CF59-1013-4F3404297C29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Emoter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InputMagic.cs">
     <Files>
-      <File FileName="Assets/Scripts/Face.cs" Line="157" Column="22" />
-      <File FileName="Assets/Scripts/PlatformerController.cs" Line="32" Column="8" />
       <File FileName="Assets/Scripts/AudioManager.cs" Line="75" Column="15" />
       <File FileName="Assets/Scripts/Manager.cs" Line="11" Column="32" />
-      <File FileName="Assets/Scripts/Shine.cs" Line="10" Column="36" />
       <File FileName="Assets/Scripts/Eater.cs" Line="43" Column="13" />
-      <File FileName="Assets/Scripts/AppleStack.cs" Line="46" Column="6" />
-      <File FileName="Assets/Scripts/Tweener.cs" Line="87" Column="20" />
-      <File FileName="Assets/Scripts/TweenAction.cs" Line="110" Column="32" />
-      <File FileName="Assets/Scripts/ColorObject.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/SpeechPoint.cs" Line="24" Column="39" />
-      <File FileName="Assets/Scripts/SpeechBubble.cs" Line="67" Column="53" />
-      <File FileName="Assets/Scripts/LookTarget.cs" Line="42" Column="6" />
-      <File FileName="Assets/Scripts/FakeParallax.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/Planet.cs" Line="24" Column="37" />
-      <File FileName="Assets/Scripts/Rotator.cs" Line="7" Column="2" />
-      <File FileName="Assets/Scripts/Emoter.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/InputMagic.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,7 +17,7 @@
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Emoter.cs" selected="True" />
+                <Node name="InputMagic.cs" selected="True" />
               </Node>
             </Node>
           </Node>
