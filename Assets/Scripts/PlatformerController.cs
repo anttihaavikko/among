@@ -297,6 +297,7 @@ public class PlatformerController : MonoBehaviour {
             anim.speed = 1f;
             anim.SetTrigger("jump");
             anim.ResetTrigger("land");
+            anim.ResetTrigger("land2");
         }
 
         body.gravityScale = gravity;
@@ -337,7 +338,8 @@ public class PlatformerController : MonoBehaviour {
 		if (anim) {
 			anim.speed = 1f;
 			anim.SetTrigger ("land");
-		}
+            anim.SetTrigger("land2");
+        }
 	}
 
 	public bool IsGrounded() {
