@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{7710642A-EA8E-CF59-1013-4F3404297C29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TogglerTrigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/KillBox.cs">
     <Files>
       <File FileName="Assets/Scripts/AudioManager.cs" Line="49" Column="3" />
       <File FileName="Assets/Scripts/Manager.cs" Line="29" Column="48" />
@@ -13,6 +13,7 @@
       <File FileName="Assets/Scripts/SpeechPoint.cs" Line="77" Column="31" />
       <File FileName="Assets/Checkpoint.cs" Line="21" Column="45" />
       <File FileName="Assets/Scripts/TogglerTrigger.cs" Line="17" Column="40" />
+      <File FileName="Assets/KillBox.cs" Line="21" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,9 +26,8 @@
                   <Node name="PropertyDrawers" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="TogglerTrigger.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="KillBox.cs" selected="True" />
             </Node>
           </Node>
         </State>
