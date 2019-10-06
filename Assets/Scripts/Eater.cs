@@ -17,6 +17,7 @@ public class Eater : MonoBehaviour
     public Cinemachine.CinemachineImpulseSource impulseSource;
     public EffectCamera cam;
     public Dimmer dimmer;
+    public bool ended = false;
 
     private ColorObject stackTop;
 
@@ -33,6 +34,8 @@ public class Eater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ended) return;
+
         //if (Input.GetKeyDown(KeyCode.Z))
         //    Colorize(0);
 

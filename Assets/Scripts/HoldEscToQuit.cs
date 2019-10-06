@@ -20,18 +20,17 @@ public class HoldEscToQuit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (InputMagic.Instance.GetButtonDown(InputMagic.B))
         {
             Tweener.Instance.ScaleTo(transform, targetSize, speed, 0f, TweenEasings.BounceEaseOut);
-            DoSound();
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (InputMagic.Instance.GetButtonUp(InputMagic.B))
         {
             escHeldFor = 0f;
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (InputMagic.Instance.GetButton(InputMagic.B))
         {
             escHeldFor += Time.deltaTime;
             CancelInvoke("HideText");
@@ -40,7 +39,6 @@ public class HoldEscToQuit : MonoBehaviour
 
         if(escHeldFor > 1.5f)
         {
-            Debug.Log("Quit");
             Application.Quit();
         }
     }
@@ -48,12 +46,5 @@ public class HoldEscToQuit : MonoBehaviour
     void HideText()
     {
         Tweener.Instance.ScaleTo(transform, hiddenSize, speed, 0f, TweenEasings.QuarticEaseIn);
-        DoSound();
-    }
-
-    void DoSound()
-    {
-        AudioManager.Instance.PlayEffectAt(25, transform.position, 0.5f);
-        AudioManager.Instance.PlayEffectAt(1, transform.position, 0.75f);
     }
 }
