@@ -75,6 +75,7 @@ public class SpeechPoint : MonoBehaviour
         endBlocks.ToList().ForEach(eb =>
         {
             eb.UpdateColor(0);
+            EffectManager.Instance.AddEffect(9, eb.transform.position);
         });
 	}
 }

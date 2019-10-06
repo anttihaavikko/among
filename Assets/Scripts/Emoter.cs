@@ -26,9 +26,13 @@ public class Emoter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Invoke("DoEmotion", delay);
-        Invoke("DoEnd", 1f);
-        AudioManager.Instance.Highpass(true);
-        eater.ended = true;
+
+        if(isEnd)
+        {
+            Invoke("DoEnd", 1f);
+            AudioManager.Instance.Highpass(true);
+            eater.ended = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
