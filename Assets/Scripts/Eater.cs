@@ -13,6 +13,7 @@ public class Eater : MonoBehaviour
     public PlatformerController pc;
     public Animator anim;
     public Face face;
+    public GameObject tail;
 
     private ColorObject stackTop;
 
@@ -49,6 +50,8 @@ public class Eater : MonoBehaviour
         EffectManager.Instance.AddEffectToParent(0, transform.position - Vector3.up * 0.75f, transform);
 
         gameObject.layer = 13 + color;
+        tail.layer = 13 + color;
+
         var c = Manager.Instance.colors[color];
         var sc = Manager.Instance.shineColors[color];
         colorSprites.ToList().ForEach(sprite => sprite.color = c);
